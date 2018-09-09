@@ -1,8 +1,21 @@
-# Disease Structured N-Mixture Model
-This repo contains code to format data, create figures, runs the model, and simulates the data for disease structured N-mixture model.
+Eco-evolutionary rescue promotes host-pathogen coexistence
 
-When using this material, please give credit to the appropriate citation:
+Graziella DiRenzo, Elise Zipkin, Evan Grant, Ana Longo, Kelly Zamudio, & Karen Lips
+Ecological Applications (In press)
 
-DiRenzo, G. V., E. Zipkin, E. C. Grant, J. A. Royle, A. V. Longo, K. Z. Zamudio, and K. R. Lips. In review. Eco-evolutionary rescue promotes host-pathogen coexistence.
+Please contact the first author for questions about the code or data: Graziella DiRenzo (grace.direnzo@gmail.com)
 
-Please see Dryad Data Repository: https://datadryad.org/resource/doi:10.5061/dryad.90cg565
+Abstract:
+
+
+Repository Directory
+DataAnalysis: Contains code for modeling, analysis, and results
+DataFormat: Contains code to format raw data for analysis and formatted data
+PostAnalysis: Contains code to estimate posterior probabilities and to create figures
+RawData: Contains CSV file of raw data
+SupportingInformation: Contains code to run simulation and code to generate supporting information
+Data
+See the following subdirectories for data and metadata: RawData, DataFormat
+
+Code
+See the following subdirectories for code and metadata: DataAnalysis, DataFormat, PostAnalysis, SupportingInformation
