@@ -1,21 +1,14 @@
-Eco-evolutionary rescue promotes host-pathogen coexistence
+# ECO-EVOLUTIONARY RESCUE PROMOTES HOST-PATHOGEN COEXISTENCE
 
-Graziella DiRenzo, Elise Zipkin, Evan Grant, Ana Longo, Kelly Zamudio, & Karen Lips
-Ecological Applications (In press)
+### [GRAZIELLA V. DIRENZO](https://grazielladirenzo.weebly.com), [ELISE F. ZIPKIN](https://msu.edu/user/ezipkin/), [EVAN H. CAMPBELL GRANT](https://www.usgs.gov/staff-profiles/evan-grant?qt-staff_profile_science_products=0#qt-staff_profile_science_products), J. ANDREW ROYLE, ANA LONGO, KELLY ZAMUDIO & KAREN LIPS 
 
-Please contact the first author for questions about the code or data: Graziella DiRenzo (grace.direnzo@gmail.com)
+### Ecological Applications (*IN PRESS*)
 
-Abstract:
+### Please contact the first author for questions about the code: Graziella DiRenzo (grace.direnzo@gmail.com)
+__________________________________________________________________________________________________________________________________________
 
+## Abstract: 
+Emerging infectious pathogens are responsible for some of the most severe host mass-mortality events in wild populations. Yet, effective pathogen control strategies are notoriously difficult to identify, in part because quantifying and forecasting pathogen spread and disease dynamics is challenging. Following an outbreak, hosts must cope with the presence of the pathogen, leading to host-pathogen coexistence or extirpation. Despite decades of research, little is known about host-pathogen coexistence post-outbreak when low host abundances and cryptic species make these interactions difficult to study. Using a novel disease-structured N-mixture model, we evaluate empirical support for three host-pathogen coexistence hypotheses (source-sink, eco-evolutionary rescue, and spatial variation in pathogen transmission) in a Neotropical amphibian community decimated by Batrachochytrium dendrobatidis (Bd) in 2004. During 2010 – 2014, we surveyed amphibians in Parque Nacional G. D. Omar Torríjos Herrera, Coclé Province, El Copé, Panama. We found that the primary driver of host-pathogen coexistence was eco-evolutionary rescue, as evidenced by similar amphibian survival and recruitment rates between infected and uninfected hosts. Average apparent monthly survival rates of uninfected and infected hosts were both close to 96%, and the expected number of uninfected and infected hosts recruited (via immigration/reproduction) was less than one host per disease state per 20 m site. The secondary driver of host-pathogen coexistence was spatial variation in pathogen transmission as we found that transmission was highest in areas of low abundance but there was no support for the source-sink hypothesis. Our results indicate that changes in the host community (i.e., through genetic or species composition) can reduce the impacts of emerging infectious disease post-outbreak. Our disease-structured N-mixture model represents a valuable advancement for conservation managers trying to understand underlying host-pathogen interactions and provides new opportunities to study disease dynamics in remnant host populations decimated by virulent pathogens.
 
-Repository Directory
-DataAnalysis: Contains code for modeling, analysis, and results
-DataFormat: Contains code to format raw data for analysis and formatted data
-PostAnalysis: Contains code to estimate posterior probabilities and to create figures
-RawData: Contains CSV file of raw data
-SupportingInformation: Contains code to run simulation and code to generate supporting information
-Data
-See the following subdirectories for data and metadata: RawData, DataFormat
-
-Code
-See the following subdirectories for code and metadata: DataAnalysis, DataFormat, PostAnalysis, SupportingInformation
+## Code
+See the following subdirectories for code: [SupportingInformation](https://github.com/Grace89/DiRenzo_etal_MEE_in_review/blob/master/Appendix_02_SEPT_2018.Rmd)
