@@ -1,0 +1,144 @@
+Supporting Information Data; S2
+
+The model used in the paper written in JAGS code.
+
+sink("model.txt")
+cat("
+model{
+#------------ Priors
+#------- Recruitment
+gammaN ~ dnorm(0, 0.001)
+gammaI ~ dnorm(0, 0.001)
+beta.g ~ dnorm(0, 0.001)
+
+#----- Initial population
+alpha.lamN ~ dnorm(0, 0.0011)
+alpha.lamI ~ dnorm(0, 0.001)
+
+#------ Survival prob
+alpha_N ~ dnorm(0, 0.368)
+alpha_I ~ dnorm(0, 0.368)
+
+#-------- Transition
+alpha_IN ~ dnorm(0, 0.368)
+alpha_NI ~ dnorm(0, 0.368)
+beta.SR ~ dnorm(0, 0.368)
+q ~ dbern(0.5)
+
+#------ Imperfect pathogen detection
+a_I ~ dunif(0.25, 1.32)
+b_I ~ dunif(0.14, 0.51)
+
+#------ Imperfect Host Detection
+for(g in 1:2){
+    alpha.pI[g] ~ dnorm(0, 0.368)
+    alpha.pN[g] ~ dnorm(0, 0.368)
+}
+
+beta.pN ~ dnorm(0, 0.368)
+beta.II ~ dnorm(0, 0.368)
+    
+#------------ Logit -> Probability scale
+for(k in 1:(K - 1)){
+    for(i in 1:R){
+     cov[i, k] <- (NI[i, k]/(Ntot[i, k]^q +0.001)))
+     covScale[i, k] <- (cov[i, k] - 2.85)
+#---------------- Logit Scale
+    lpsi_NI[i, k] <- alpha_NI + beta.SR * covScale[i, k]
+    lpsi_IN[i, k] <- alpha_IN
+
+    lphi_N[i, k] <- alpha_N
+    lphi_I[i, k] <- alpha_I
+
+#---------------- Probability scale
+    psi_NI[i, k] <- exp(lpsi_NI[i, k]) / (1+ exp(lpsi_NI[i, k]))
+    psi_IN[i, k] <- exp(lpsi_IN[i, k]) / (1+ exp(lpsi_IN[i, k]))
+    phiN[i, k] <- exp(lphi_N[i, k]) / (1+ exp(lphi_N[i, k]))
+    phiI[i, k] <- exp(lphi_I[i, k]) / (1+ exp(lphi_I[i, k]))
+  }
+}
+
+#-----------------First year
+for(i in 1:R){								
+#------ Not infected
+    NN[i, 1] ~ dpois(lambdaN[i])	
+      log(lambdaN[i]) <- alpha.lamN
+#----- Infected
+    NI[i, 1] ~ dpois(lambdaI[i])	   		
+      log(lambdaI[i]) <- alpha.lamI
+#-------- Population Size
+    Ntot[i, 1] <- NN[i, 1] + NI[i, 1]
+    Prev[i, 1] <- NI[i, 1] / (Ntot[i, 1]+0.001)
+}
+#----------- All other years
+
+for(k in 2:K){
+  for(i in 1:R){
+#------- NOT Infected
+    SN[i,k-1] ~ dbin(phiN[i,k-1]^days[i,k-1], NN[i, k-1])
+    TN[i,k-1] ~ dbin(psi_NI[i,k-1]^days[i,k-1], SN[i, k-1])
+    GN[i,k-1] ~ dpois(GaN[i, k-1])
+    	log(GaN[i, k-1]) <- gammaN + beta.g * daysS[i,k-1]
+#------- Infected
+    SI[i,k-1] ~ dbin(phiI[i,k-1]^days[i,k-1], NI[i, k-1])
+    TI[i,k-1] ~ dbin(psi_IN[i,k-1]^days[i,k-1], SI[i, k-1])
+    GI[i,k-1] ~ dpois(GaI[i, k-1])
+    	log(GaI[i, k-1]) <- gammaI + beta.g * daysS[i,k-1]
+#-------- Population Size
+    NN[i, k] <- SN[i,k-1] + GN[i,k-1] + TI[i,k-1] - TN[i,k-1]
+    NI[i, k] <- SI[i,k-1] + GI[i,k-1] - TI[i,k-1] + TN[i,k-1]
+# Total population
+    Ntot[i, k] <- NN[i, k] + NI[i, k]
+# Prevalence
+    Prev[i, k] <- NI[i, k] / (Ntot[i, k]+0.001)
+  }
+}
+#------------- Obervation model
+for(i in 1:R){
+  for(k in 1:K){
+    for(j in 1:T){
+#--------- Probability of detecting a host
+     yN[i, j, k] ~ dbin(pN[i, j, k], NN[i, k])
+        logit(pN[i, j, k]) <- alpha.pN[Se[k]] + beta.pN * obs[i,j,k]
+     yN.new[i, j, k] ~ dbin(pN[i, j, k], NN[i, k])
+     yI[i, j, k] ~ dbin(pI[i, j, k], NI[i, k]) 
+        logit(pI[i, j, k]) <- alpha.pI[Se[k]] + beta.pN * obs[i,j,k] + beta.II * II2[i, j, k]
+     yI.new[i, j, k] ~ dbin(pI[i, j, k], NI[i, k]) 
+#-------- Probability of detecting the pathogen on a host
+    cI[i, j, k] ~ dsum(yI[i, j, k], (-1 * mis[i, j, k])) 
+    cU[i, j, k] ~ dsum(yN[i, j, k], mis[i, j, k]) 
+     mis[i, j, k] ~ dbin(theta2[i, j, k], x[i, j, k]) 	
+        theta2[i, j, k] <- 1 - theta[i, j, k]
+        logit(theta[i, j, k]) <- a_I + b_I * II2[i, j, k]
+    }
+  }
+}
+##------------ Bayesian p-value
+for(k in 1:K){
+ for(i in 1:R){
+  for(j in 1:T){
+    evalN[i,j,k] <- pN[i, j, k] * NN[i, k] 					
+    evalI[i,j,k] <- pI[i, j, k] * NI[i, k] 					
+    EN[i,j,k] <- pow((yN[i, j, k] - evalN[i,j,k]),2) / (evalN[i,j,k] + 0.5) 	
+    EI[i,j,k] <- pow((yI[i, j, k] - evalI[i,j,k]),2) / (evalI[i,j,k] + 0.5) 	
+    E.newN[i,j,k] <- pow((yN.new[i, j,k] - evalN[i,j,k]),2) / (evalN[i,j,k] + 0.5)  
+    E.newI[i,j,k] <- pow((yI.new[i, j,k] - evalI[i,j,k]),2) / (evalI[i,j,k] + 0.5)  
+  } #js									
+  } #is
+} # ks
+
+zzzfitN 		<- sum(EN[,,]) 	
+zzzfitN.new  <- sum(E.newN[,,])
+
+zzzfitI		<- sum(EI[,,]) 	
+zzzfitI.new  <- sum(E.newI[,,])
+
+# Examining fit for each season of infected model
+for(k in 1:K){
+  zzzfitII[k]		<- sum(EI[,,k]) 	
+  zzzfitII.new[k]  <- sum(E.newI[,,k])
+}
+
+}
+", fill = TRUE)
+sink()
