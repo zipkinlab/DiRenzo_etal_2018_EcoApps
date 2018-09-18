@@ -1,8 +1,8 @@
-# ECO-EVOLUTIONARY RESCUE PROMOTES HOST-PATHOGEN COEXISTENCE
+# Eco-evolutionary rescue promotes host-pathogen coexistence
 
-### [GRAZIELLA V. DIRENZO](https://grazielladirenzo.weebly.com), [ELISE F. ZIPKIN](https://msu.edu/user/ezipkin/), [EVAN H. CAMPBELL GRANT](https://www.usgs.gov/staff-profiles/evan-grant?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [J. ANDREW ROYLE](https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [ANA LONGO](https://biology.ufl.edu/people/faculty/#prettyPhoto), [KELLY ZAMUDIO](http://ecologyandevolution.cornell.edu/kelly-zamudio) & [KAREN LIPS](http://lipslab.weebly.com/)
+### [GRAZIELLA V. DIRENZO Graziella V. DiRenzo](https://grazielladirenzo.weebly.com), [Elise F. Zipkin](https://msu.edu/user/ezipkin/), [Evan H. Campbell Grant](https://www.usgs.gov/staff-profiles/evan-grant?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [J. Andrew Royle](https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [Ana Longo](https://biology.ufl.edu/people/faculty/#prettyPhoto), [Kelly Zamudio](http://ecologyandevolution.cornell.edu/kelly-zamudio) & [Karen Lips](http://lipslab.weebly.com/)
 
-### Ecological Applications (*IN PRESS*)
+### Ecological Applications (*In press*)
 
 ### Please contact the first author for questions about the code: Graziella DiRenzo (grace.direnzo@gmail.com)
 __________________________________________________________________________________________________________________________________________
