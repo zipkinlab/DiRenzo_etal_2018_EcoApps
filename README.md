@@ -1,6 +1,6 @@
 # Eco-evolutionary rescue promotes host-pathogen coexistence
 
-### [GRAZIELLA V. DIRENZO Graziella V. DiRenzo](https://grazielladirenzo.weebly.com), [Elise F. Zipkin](https://msu.edu/user/ezipkin/), [Evan H. Campbell Grant](https://www.usgs.gov/staff-profiles/evan-grant?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [J. Andrew Royle](https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [Ana Longo](https://biology.ufl.edu/people/faculty/#prettyPhoto), [Kelly Zamudio](http://ecologyandevolution.cornell.edu/kelly-zamudio) & [Karen Lips](http://lipslab.weebly.com/)
+### [Graziella V. DiRenzo](https://grazielladirenzo.weebly.com), [Elise F. Zipkin](https://msu.edu/user/ezipkin/), [Evan H. Campbell Grant](https://www.usgs.gov/staff-profiles/evan-grant?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [J. Andrew Royle](https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [Ana Longo](https://biology.ufl.edu/people/faculty/#prettyPhoto), [Kelly Zamudio](http://ecologyandevolution.cornell.edu/kelly-zamudio) & [Karen Lips](http://lipslab.weebly.com/)
 
 ### Ecological Applications (*In press*)
 
