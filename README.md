@@ -2,7 +2,7 @@
 
 ### [GRAZIELLA V. DIRENZO](https://grazielladirenzo.weebly.com), [ELISE F. ZIPKIN](https://msu.edu/user/ezipkin/), [EVAN H. CAMPBELL GRANT](https://www.usgs.gov/staff-profiles/evan-grant?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [J. ANDREW ROYLE](https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [ANA LONGO](https://biology.ufl.edu/people/faculty/#prettyPhoto), [KELLY ZAMUDIO](http://ecologyandevolution.cornell.edu/kelly-zamudio) & [KAREN LIPS](http://lipslab.weebly.com/)
 
-### Ecological Applications (*IN PRESS*)
+### Ecological Applications (2018)
 
 ### Please contact the first author for questions about the code: Graziella DiRenzo (grace.direnzo@gmail.com)
 __________________________________________________________________________________________________________________________________________
