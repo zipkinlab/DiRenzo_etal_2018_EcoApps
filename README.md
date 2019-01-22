@@ -2,11 +2,9 @@
 
 ### [Graziella V. DiRenzo](https://grazielladirenzo.weebly.com), [Elise F. Zipkin](https://msu.edu/user/ezipkin/), [Evan H. Campbell Grant](https://www.usgs.gov/staff-profiles/evan-grant?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [J. Andrew Royle](https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products), [Ana Longo](https://biology.ufl.edu/people/faculty/#prettyPhoto), [Kelly Zamudio](http://ecologyandevolution.cornell.edu/kelly-zamudio) & [Karen Lips](http://lipslab.weebly.com/)
 
-<<<<<<< HEAD
-### Ecological Applications 
-=======
 ### Ecological Applications (2018)
->>>>>>> refs/remotes/Grace89/master
+
+### Code/Data DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1042175.svg)](https://doi.org/10.5281/zenodo.1042175)
 
 ### Please contact the first author for questions about the code: Graziella DiRenzo (grace.direnzo@gmail.com)
 __________________________________________________________________________________________________________________________________________
